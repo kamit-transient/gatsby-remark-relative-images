@@ -26,7 +26,7 @@ export const onCreateNode = (
   if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
     const files = getNodesByType(`File`);
 
-    const directory = path.dirname(node.fileAbsolutePath);
+    const directory = path.dirname(node.fileAbsolutePath || node.internal.contentFilePath);
 
     // Deeply iterate through frontmatter data for absolute paths
     traverse(node.frontmatter).forEach(function (value) {

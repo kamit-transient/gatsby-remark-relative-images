@@ -36,6 +36,7 @@ export type MarkdownNode = {
   frontmatter?: object;
   internal: {
     type: string;
+    contentFilePath: string;
   };
   fileAbsolutePath: string;
 };
